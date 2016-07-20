@@ -138,9 +138,11 @@ public class Main {
 				throw new IllegalArgumentException();
 		}
 
-		predictor
+		/*predictor
 			.setLabelCol(formula.getLabelCol())
-			.setFeaturesCol(formula.getFeaturesCol());
+			.setFeaturesCol(formula.getFeaturesCol());*/
+		predictor.setLabelCol(formula.getLabelCol());
+		predictor.setFeaturesCol(formula.getFeaturesCol());
 
 		Pipeline pipeline = new Pipeline()
 			.setStages(new PipelineStage[]{formula, predictor});
